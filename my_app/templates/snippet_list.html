@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snippets</title>
+</head>
+<body>
+    <h1>All Snippets</h1>
+    <ul>
+        {% for snippet in snippets %}
+            <li>
+                <a href="{% url 'snippet_detail' snippet.pk %}">
+                    {{ snippet.title }} ({{ snippet.language }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'snippet_create' %}">Create New Snippet</a>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>
