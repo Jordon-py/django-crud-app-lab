@@ -35,3 +35,9 @@ class Snippet(models.Model):
 #     return HttpResponse('Hello, Django!')
 #
 # # Snippet views                   
+-- Give the user permission to connect and create within the DB
+GRANT USAGE ON SCHEMA public TO cjordon;
+GRANT CREATE ON SCHEMA public TO cjordon;
+
+-- Optionally, ensure the search path is set to 'public'
+ALTER ROLE cjordon SET search_path TO public;
